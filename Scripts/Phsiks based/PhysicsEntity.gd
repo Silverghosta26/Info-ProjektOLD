@@ -10,7 +10,7 @@ const ACCEL_NORMAL = 1000.0
 const FRICTION_NORMAL = 3000.0
 
 const ACCEL_ICE = 1000.0
-const FRICTION_ICE = 200.0
+const FRICTION_ICE = 150.0
 
 const ACCEL_AIR = 1000.0
 const FRICTION_AIR = 1000.0
@@ -192,7 +192,10 @@ func update_tile_state():
 	air_4 = false
 	
 	check_tiles_at_position(global_position)
+	
 	check_tiles_at_down(global_position+ Vector2(0,15))
+	check_tiles_at_down(global_position+ Vector2(-8,15)) # für bessere coverage
+	check_tiles_at_down(global_position+ Vector2(8,15))
 
 func check_tiles_at_position(pos):
 	for tm in tilemaps:

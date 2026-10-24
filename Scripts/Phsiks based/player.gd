@@ -4,11 +4,11 @@ var input_enabled = true
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurtbox: CollisionShape2D = $hurtbox
 
-#func _ready() -> void:
-#var exit_tp = get_tree().current_scene.find_child("exit", true, false)
-#
-#if exit_tp:
-#	global_position = exit_tp.global_position
+func _ready() -> void:
+	var exit_tp = get_tree().current_scene.find_child("exit", true, false)
+
+	if exit_tp:
+		global_position = exit_tp.global_position
 		
 		
 func check_enemy_collisions():
